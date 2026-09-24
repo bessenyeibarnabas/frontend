@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orai_feladat</title>
+</head>
+<body>
+    
+
+    <script>
+        //Készítsen fgv-t, amely elszámol 0-tól 20-ig egyessével, de nem szabad hozzá ciklust használni! Egy másodpercenként írj ki a számot a konuolra.
+        var i = 0
+        function szamol(){
+            console.log(i);
+            i++;
+            if(i<20)
+                return;
+            setTimeout(szamol, 1000)
+        }
+
+        szamol();
+    </script>
+</body>
+</html>

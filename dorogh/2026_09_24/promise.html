@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <script>
+        const getReceptek = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([82, 329, 854, 12, 78, 124]);
+            }, 1500);
+        });
+
+        // Promise-t visszaadó függvény
+        const recept = id => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const receptAdat = {
+                    id: id,
+                    cim: "Almás pite",
+                    kategoria: "sütemény",
+                    ido: "120 perc",
+                    nehezseg: 2,
+                    hozzavalok: ["alma", "liszt", "tojás", "tej", "cukor", "fahéj"]
+                };
+                resolve(receptAdat);
+            }, 2000);
+        });
+
+        const receptKategóriaSzerint = (kategoria) => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const sutemenyek = [
+                    { id: 12, cim: "Almás pite" },
+                    { id: 49, cim: "Aranygaluska" },
+                    { id: 155, cim: "Kakaós csiga" }
+                ];
+                resolve(sutemenyek);
+            }, 1500);
+        });
+
+        // Promise láncolás
+        getReceptek
+            .then(receptekId => {
+                console.log(receptekId);
+                return recept(receptekId[3]); 
+            })
+            .then(egyRecept => {
+                console.log(egyRecept);
+                return receptKategóriaSzerint(egyRecept.kategoria);
+            })
+            .then(receptek => {
+                console.log(receptek);
+            })
+            .catch(error => {
+                console.log(`Hiba: ${error}`);
+            });
+    </script>
+</body>
+</html>

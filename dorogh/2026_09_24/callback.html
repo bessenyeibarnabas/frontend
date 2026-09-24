@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+
+    <script>
+        function getReceptek(){
+            setTimeout( ()=>{
+                const receptek = [82, 329, 854, 12, 78, 124];
+                console.log(receptek);
+                setTimeout( ()=>{
+                    const recept = {
+                        id: 12,
+                        cim: "Almás pite",
+                        kategoria: "sütemény",
+                        ido: "120 perc",
+                        nehezsegg: 2,
+                        hozzavalok: ["alma", "liszt", "tojás", "tej", "cukor", "fahéj"]
+                    };
+                    console.log(recept);
+
+                    setTimeout((kategoria)=>{
+                        const sutemenyek = [
+                            { id: 12, cim: "Almás pite"},
+                            { id: 49, cim: "Aranygaluska"},
+                            { id: 155, cim: "Kakaós csiga"}
+
+                        ];
+                        console.log(sutemenyek)
+
+                    }, 1500);
+
+                }, 2000);
+
+            }, 1500);
+        }
+
+        getReceptek();
+    </script>
+</body>
+</html>

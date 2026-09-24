@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API alapok</title>
+</head>
+<body>
+    <img id="pic" src="" alt="">
+
+    <script>
+        async function getPokemon(url){
+            const response = await fetch(url);
+            const data = await response.json();
+            // console.log(response);
+            console.log(data)
+
+            document.getElementById("pic").src = data.sprites.other['official-artwork'].front_default
+        }
+
+        getPokemon("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+    </script>
+</body>
+</html>

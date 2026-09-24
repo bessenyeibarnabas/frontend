@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+
+        const getReceptek = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(Math.random() < 0.8)
+                    resolve([82, 329, 854, 12, 78, 124]);
+                reject("1_nem sikerült")
+            }, 1500);
+        });
+
+        const recept = id => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const receptAdat = {
+                    id: id,
+                    cim: "Almás pite",
+                    kategoria: "sütemény",
+                    ido: "120 perc",
+                    nehezseg: 2,
+                    hozzavalok: ["alma", "liszt", "tojás", "tej", "cukor", "fahéj"]
+                };
+                if(Math.random() < 0.8)
+                    resolve(receptAdat);
+                reject("nope")
+            }, 2000);
+        });
+
+        const receptKategóriaSzerint = (kategoria) => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const sutemenyek = [
+                    { id: 12, cim: "Almás pite" },
+                    { id: 49, cim: "Aranygaluska" },
+                    { id: 155, cim: "Kakaós csiga" }
+                ];
+                if(Math.random() < 0.8)
+                    resolve(sutemenyek);
+                reject("A kategóriák szerint lekérd nem sikerült")
+            }, 1500);
+        });
+
+        async function fgv(){
+            try{
+                const receptek = await getReceptek;
+                console.log(receptek);
+
+                const egyRecept = await recept(receptek[4]);
+                console.log(egyRecept);
+
+                const sutemenyek = await receptKategóriaSzerint(egyRecept.kategoria);
+                console.log(sutemenyek);
+            }
+            catch(error){
+                console.log("Hiba: " + error);
+            }
+            
+        }
+
+        fgv();
+
+    </script>
+</body>
+</html>
