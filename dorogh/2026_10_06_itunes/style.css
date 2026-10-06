@@ -1,0 +1,110 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0, 128, 167, 0.2), transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255, 0, 0, 0.1), transparent 40%),
+        linear-gradient(135deg, #000000 0%, #0b0b0b 40%, #220036 65%, #000000 100%);
+    color: #ffffff;
+    font-family: "Corbel", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#keresett {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    border-radius: 500px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 1px 1px 1px rgba(255, 255, 255, 0.1) inset, -1px -1px 1px rgba(0, 0, 0, 0.2) inset;
+    margin-bottom: 20px;
+}
+
+#keresett:hover {
+    transform: scale(1.04);
+    box-shadow: none;
+}
+
+#kereses {
+    transition: all 0.2s;
+    padding: 10px 16px;
+    border-radius: 500px;
+    border: none;
+    cursor: pointer;
+    color: #111;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+#kereses:hover {
+    transform: scale(1.2);
+    background-color: black;
+    color: white;
+}
+
+#kereses:active {
+    transform: scale(0.9);
+    background-color: rgb(58, 58, 58);
+}
+
+/*********************************************************************/
+
+table tr:nth-child(even) {
+    background-color: #000000;
+}
+
+table tr:nth-child(odd) {
+    background-color: #141414;
+}
+
+
+table .zene-td{
+    cursor: pointer;
+}
+table .zene-td:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+table img{
+    width: 100%;
+}
+table{
+    border-collapse: collapse;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#boritokep{
+    border-radius: 50px;
+    transform-origin: center;
+    animation: spin 10s linear infinite;
+    
+}
