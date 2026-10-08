@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokemon Card Generator</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="card">
+            <p id="hp"></p>
+            <img id="img" src="" alt="" />
+            <h2 id="poke-name"></h2>
+            <div id="type"></div>
+            <div id="stats">
+                <div>
+                    <h3 id="attack"></h3>
+                    <p>Attack</p>
+                </div>
+                <div>
+                    <h3 id="defense"></h3>
+                    <p>Defense</p>
+                </div>
+                <div>
+                    <h3 id="speed"></h3>
+                    <p>Speed</p>
+                </div>
+            </div>
+        </div>
+        <button id="btn">Generate</button>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- <script>
+        async function getPokemon(url){
+            const response = await fetch(url);
+            const data = await response.json();
+            //console.log(response);
+            console.log(data);
+
+            document.getElementById("pic").src = data.sprites.other['official-artwork'].front_default;
+        }
+
+        getPokemon("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+    </script> -->
+</body>
+</html>
