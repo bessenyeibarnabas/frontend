@@ -1,0 +1,16 @@
+#tartalom{
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    text-align: left;
+    max-width: 230px;
+    max-height: 800px;
+    
+}
+
+button{
+    background-color: chocolate;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    height: 30px;
+}
