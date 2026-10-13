@@ -1,0 +1,28 @@
+React
+-JS könyvtár (library)
+-Nem keretrendszer (framework)
+-2011 - Facebook
+Kik használják (X, Netflix, Reddit)
+-Paradigmaváltás
+
+JS-imperatív (hogyan)
+
+let a = [1, 2, 3]
+let e = []
+for(let i = 0; i<a.lenhgt; i++){
+    e[i] = a[1]*2
+}
+
+
+
+
+
+REACT-dekloratív logika (mit)
+let a = [1, 2, 3]
+let e = a.map(i => i*2)
+
+Kiterjesztése JSX
+
+
+kell a node.js, és npm
+vs code (Prettier)
